@@ -119,3 +119,11 @@ unsplash free images, 2026. photos. [Online]
 Available at: https://unsplashfreeimages.com
 [Accessed 14 april 2026].
 
+how the website look on desktop
+ <img src="images/websiteondesktop.png">
+
+ how the website look on a tablet
+ <img src="images/websiteontablet.png">
+
+ how website look on mobile phone
+  <img src="images/websiteonmobiledevice.png">
