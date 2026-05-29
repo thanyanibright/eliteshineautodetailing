@@ -4,115 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite Shine Auto Detailing - Contact</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- NAVIGATION -->
   <nav>
-    <strong>Elite Shine Auto Detailing</strong>
-    <br>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="services.html">Services</a> |
-    <a href="enquiry.html">Enquiry</a> |
+    <a href="index.html" class="nav-logo">
+      <img src="images/elite_shine_logo.jpg" alt="Elite Shine Auto Detailing Logo">
+      <span class="nav-logo-text">Elite Shine<span>Auto Detailing</span></span>
+    </a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Service</a>
+    <a href="enquiry.html">Enquiry</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <hr>
-
-  <h1>Contact Us</h1>
-  <p>We are based in Soweto, Johannesburg, and we service all of Gauteng. Reach out through any of the channels below or fill in the contact form and we will get back to you shortly.</p>
-
-  <!-- IMAGE PLACEHOLDER -->
-  <img src="images/carlogo.jpg" width="300" >
-
-  <hr>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Contact Us</h1>
+    <p>Based in Soweto — servicing all of Gauteng. Reach out any time.</p>
+  </div>
 
   <!-- CONTACT DETAILS -->
   <section>
-    <h2>Contact Details</h2>
+    <div class="contact-info-box">
+      <p><strong>Business Name:</strong> Elite Shine Auto Detailing</p>
+      <p><strong>Phone / WhatsApp:</strong> 079 732 5580</p>
+      <p><strong>Email:</strong> eliteshineauto@gmail.com</p>
+      <p><strong>Website:</strong> www.eliteshineautodetailing.co.za</p>
+      <p><strong>Address:</strong> 1019 Koma Str, Jabulani, Soweto, Johannesburg</p>
+      <p><strong>Service Area:</strong> Soweto, Johannesburg CBD, Sandton, Roodepoort, Krugersdorp, Boksburg, Germiston, Midrand, Centurion, and surrounding Gauteng areas.</p>
 
-    <p><strong>Business Name:</strong> Elite Shine Auto Detailing</p>
-    <p><strong>Phone:</strong> 079 732 5580</p>
-    <p><strong>WhatsApp:</strong> 079 732 5580</p>
-    <p><strong>Email:</strong> Eliteshineauto@gmail.com</p>
-    <p><strong>Website:</strong> www.eliteshineautodetailing.co.za</p>
+      <h3>Operating Hours</h3>
+      <table>
+        <tr><th>Day</th><th>Hours</th></tr>
+        <tr><td>Monday – Friday</td><td>7:00 AM – 6:00 PM</td></tr>
+        <tr><td>Saturday</td><td>8:00 AM – 8:00 PM</td></tr>
+        <tr><td>Sunday &amp; Public Holidays</td><td>By appointment only</td></tr>
+      </table>
 
-    <h3>Operating Hours</h3>
-    <table border="1" cellpadding="8" cellspacing="0">
-      <tr>
-        <th>Day</th>
-        <th>Hours</th>
-      </tr>
-      <tr>
-        <td>Monday - Friday</td>
-        <td>7:00 AM - 6:00 PM</td>
-      </tr>
-      <tr>
-        <td>Saturday</td>
-        <td>8:00 AM - 8:00 PM</td>
-      </tr>
-      <tr>
-        <td>Sunday &amp; Public Holidays</td>
-        <td>By appointment only</td>
-      </tr>
-    </table>
-  </section>
+      <div class="social-row">
+        <a href="https://www.facebook.com/EliteShineAutoDetailing" class="social-btn">Facebook</a>
+        <a href="https://www.instagram.com/eliteshineautodetailing" class="social-btn">Instagram</a>
+        <a href="https://www.tiktok.com/@eliteshineauto" class="social-btn">TikTok</a>
+        <a href="https://wa.me/27797325580" class="social-btn">WhatsApp</a>
+      </div>
+    </div>
 
-  <hr>
-
-  <!-- LOCATION -->
-  <section>
-    <h2>Our Location</h2>
-    <p>We are a mobile service based in Soweto, Johannesburg. We travel to your home, workplace, or any convenient location across Gauteng.</p>
-    <p><strong>Service Area:</strong> Soweto, Johannesburg CBD, Sandton, Roodepoort, Krugersdorp, Boksburg, Germiston, Midrand, Centurion, and surrounding Gauteng areas.</p>
-
-
-  <hr>
-
-  <!-- SOCIAL MEDIA -->
-  <section>
-    <h2>Find Us on Social Media</h2>
-    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/EliteShineAutoDetailing">facebook.com/EliteShineAutoDetailing</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/eliteshineautodetailing">@eliteshineautodetailing</a></p>
-    <p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@eliteshineauto">@eliteshineauto</a></p>
-    <p><strong>WhatsApp Business:</strong> <a href="https://wa.me/27797325580">Chat on WhatsApp — 079 732 5580</a></p>
-  </section>
-
-  <hr>
-
-  <!-- CONTACT FORM -->
-  <section>
+    <!-- CONTACT FORM -->
     <h2>Send Us a Message</h2>
-
     <form action="#" method="post">
 
       <p>
-        <label for="name">Your Name: *</label><br>
-        <input type="text" id="name" name="name" placeholder="e.g. Nomsa Khumalo" size="40" required>
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Nomsa Khumalo" required>
       </p>
 
       <p>
-        <label for="phone">Phone Number: *</label><br>
-        <input type="tel" id="phone" name="phone" placeholder="e.g. 082 345 6789" size="40" required>
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g. 082 345 6789" required>
       </p>
 
       <p>
-        <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email" placeholder="e.g. nomsa@email.com" size="40">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="e.g. nomsa@email.com">
       </p>
 
       <p>
-        <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject" placeholder="e.g. Booking enquiry" size="40">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g. Booking enquiry">
       </p>
 
       <p>
-        <label for="message">Message: *</label><br>
-        <textarea id="message" name="message" rows="6" cols="40" placeholder="Type your message here..." required></textarea>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
       </p>
 
-      <p>* Required fields</p>
+      <p><em>* Required fields</em></p>
 
       <p>
         <input type="submit" value="SEND MESSAGE">
@@ -126,13 +96,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="services.html">Services</a> |
-      <a href="enquiry.html">Enquiry</a> |
-      <a href="contact.html">Contact</a>
-    </p>
+    <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="service.html">Service</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></p>
     <p>Follow us: <a href="https://www.facebook.com/EliteShineAutoDetailing">Facebook</a> | <a href="https://www.instagram.com/eliteshineautodetailing">Instagram</a> | <a href="https://www.tiktok.com/@eliteshineauto">TikTok</a></p>
     <p>&copy; 2024 Elite Shine Auto Detailing. All rights reserved. | Soweto, Johannesburg 1019 Koma Str Jabulani</p>
   </footer>
