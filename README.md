@@ -118,6 +118,20 @@ Available at: http;//pixabay.cm
 unsplash free images, 2026. photos. [Online] 
 Available at: https://unsplashfreeimages.com
 [Accessed 14 april 2026].
+Leaflet, 2024. Leaflet — an open-source JavaScript library for
+interactive maps. [Online] Available at: https://leafletjs.com/
+[Accessed 19 June 2026].
+
+OpenStreetMap contributors, 2024. OpenStreetMap. [Online]
+Available at: https://www.openstreetmap.org/copyright
+[Accessed 19 June 2026].
+
+Mozilla Developer Network, 2026. Web APIs: IntersectionObserver.
+[Online] Available at: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+[Accessed 19 June 2026].
+
+Google Fonts, 2026. Montserrat, Open Sans and Lato. [Online]
+Available at: https://fonts.google.com/ [Accessed 19 June 2026].
 
 how the website look on desktop
  <img src="images/websiteondesktop.png">
