@@ -1,0 +1,366 @@
+/* ============================================================
+   interactive.css
+   Elite Shine Auto Detailing — Part 3
+   Styling for everything added in Part 3: accordion/FAQ, gallery
+   lightbox, service modal, search/filter bar, form responses,
+   the Leaflet map, scroll-reveal animation and the back-to-top
+   button.
+
+   Colours and fonts re-use the brand already defined in the
+   Project Proposal:
+     Deep Blue  #0A3D62   Light Blue #3C91E6
+     White      #FFFFFF   Black      #1B1B1B
+     Headings: Montserrat | Body: Open Sans | Buttons/CTA: Lato
+   ============================================================ */
+
+:root {
+  --eshine-deep-blue: #0A3D62;
+  --eshine-light-blue: #3C91E6;
+  --eshine-white: #FFFFFF;
+  --eshine-black: #1B1B1B;
+  --eshine-error: #C0392B;
+  --eshine-success: #1E7B45;
+}
+
+/* ---------------------------------------------------------- */
+/* Scroll-reveal animation (used site-wide via main.js)        */
+/* ---------------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .fade-in.visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* Active navigation link                                      */
+/* ---------------------------------------------------------- */
+nav a.active-link {
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--eshine-light-blue);
+}
+
+/* ---------------------------------------------------------- */
+/* Back-to-top button                                          */
+/* ---------------------------------------------------------- */
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--eshine-deep-blue);
+  color: var(--eshine-white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  z-index: 900;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#back-to-top:hover { background-color: var(--eshine-light-blue); }
+
+/* ---------------------------------------------------------- */
+/* FAQ Accordion (homepage)                                    */
+/* ---------------------------------------------------------- */
+.faq-list { max-width: 800px; margin: 0 auto; }
+
+.faq-item {
+  border-bottom: 1px solid #d8e3ee;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--eshine-deep-blue);
+  padding: 16px 36px 16px 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 6px;
+  top: 14px;
+  font-size: 1.4rem;
+  color: var(--eshine-light-blue);
+  transition: transform 0.25s ease;
+}
+
+.faq-question[aria-expanded="true"]::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 4px;
+}
+
+.faq-answer p {
+  padding-bottom: 16px;
+  margin: 0;
+  color: var(--eshine-black);
+}
+
+/* ---------------------------------------------------------- */
+/* Service search / filter bar                                 */
+/* ---------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0 30px;
+}
+
+#service-search {
+  flex: 1 1 220px;
+  padding: 10px 14px;
+  border: 1px solid #b9c8d6;
+  border-radius: 6px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.filter-btn {
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--eshine-deep-blue);
+  background-color: var(--eshine-white);
+  color: var(--eshine-deep-blue);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover { background-color: #e8f1fb; }
+
+.filter-btn.active {
+  background-color: var(--eshine-deep-blue);
+  color: var(--eshine-white);
+}
+
+#no-results-msg {
+  display: none;
+  font-style: italic;
+  color: var(--eshine-black);
+  margin: 20px 0;
+}
+
+.view-details-btn {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 2px solid var(--eshine-light-blue);
+  background-color: var(--eshine-white);
+  color: var(--eshine-deep-blue);
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background-color: var(--eshine-light-blue);
+  color: var(--eshine-white);
+}
+
+/* ---------------------------------------------------------- */
+/* Modal (service details) + Lightbox (gallery) shared base     */
+/* ---------------------------------------------------------- */
+.modal-overlay,
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 20, 30, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.modal-overlay.open,
+.lightbox-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.lightbox-locked { overflow: hidden; }
+
+.modal-box {
+  background-color: var(--eshine-white);
+  max-width: 560px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 36px 28px 28px;
+  position: relative;
+}
+
+.modal-content h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--eshine-deep-blue);
+  margin-top: 0;
+}
+
+.modal-close,
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--eshine-black);
+  cursor: pointer;
+}
+
+.lightbox-close { top: 20px; right: 24px; color: var(--eshine-white); }
+
+.lightbox-figure {
+  max-width: 90vw;
+  max-height: 85vh;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  border-radius: 6px;
+}
+
+.lightbox-caption {
+  color: var(--eshine-white);
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin-top: 10px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  background: none;
+  border: none;
+  color: var(--eshine-white);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 18px;
+}
+
+/* ---------------------------------------------------------- */
+/* Form error / response messages                              */
+/* ---------------------------------------------------------- */
+.error-msg {
+  display: block;
+  color: var(--eshine-error);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.input-invalid {
+  border: 1px solid var(--eshine-error) !important;
+  outline: none;
+}
+
+.response-box {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+  display: none;
+}
+
+.response-success {
+  background-color: #e5f5ea;
+  border: 1px solid var(--eshine-success);
+  color: var(--eshine-success);
+  display: block;
+}
+
+.response-error {
+  background-color: #fbeae8;
+  border: 1px solid var(--eshine-error);
+  color: var(--eshine-error);
+  display: block;
+}
+
+.send-email-btn {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--eshine-deep-blue);
+  color: var(--eshine-white) !important;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.send-email-btn:hover { background-color: var(--eshine-light-blue); }
+
+/* ---------------------------------------------------------- */
+/* Leaflet map container                                       */
+/* ---------------------------------------------------------- */
+#map {
+  height: 380px;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 1px solid #b9c8d6;
+}
+
+/* ---------------------------------------------------------- */
+/* Eco-section icons (About page addition)                     */
+/* ---------------------------------------------------------- */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+.eco-card {
+  background-color: #f3f8fd;
+  border-left: 4px solid var(--eshine-light-blue);
+  padding: 16px 18px;
+  border-radius: 6px;
+}
