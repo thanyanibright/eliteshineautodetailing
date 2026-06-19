@@ -750,3 +750,37 @@ hr {
   section { padding: 5rem 2rem; }
   section:first-of-type h1 { font-size: 3.5rem; }
 }
+.location-section {
+
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.location-section h2 {
+
+    color: #0A3D62;
+    margin-bottom: 15px;
+}
+
+.location-section p {
+
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+}
+
+.map-container {
+
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.map-container iframe {
+
+    width: 100%;
+    display: block;
+}
