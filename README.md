@@ -156,58 +156,65 @@ with your real feedback.]
 ### Website Deployment
 Deployed at: [FILL IN your live Netlify / GitHub Pages URL once deployed]
  
- 
-  Commits on Jun 19, 2026
+ Commits on Jun 20, 2026
+updated robots.txt , sitemap.xml and readme
+thanyanibright
+thanyanibright
+committed
+1 minute ago
+·
+Commits on Jun 19, 2026
 updated readme
 thanyanibright
 thanyanibright
 committed
-18 minutes ago
+1 hour ago
+·
 updated contact and style.css
 thanyanibright
 thanyanibright
 committed
-23 minutes ago
+1 hour ago
 created main.js, gallery.js, forms.js, servives.js ,map.js
 thanyanibright
 thanyanibright
 committed
-1 hour ago
+3 hours ago
 created and edited interactive.css
 thanyanibright
 thanyanibright
 committed
-6 hours ago
+7 hours ago
 updated contact.html
 thanyanibright
 thanyanibright
 committed
-6 hours ago
+7 hours ago
 updated enquiry.html
 thanyanibright
 thanyanibright
 committed
-6 hours ago
+8 hours ago
 updated service.html
 thanyanibright
 thanyanibright
 committed
-10 hours ago
+11 hours ago
 updated about.html
 thanyanibright
 thanyanibright
 committed
-10 hours ago
+11 hours ago
 updated index.html
 thanyanibright
 thanyanibright
 committed
-10 hours ago
+11 hours ago
 created script.js
 thanyanibright
 thanyanibright
 committed
-17 hours ago
+19 hours ago
 Commits on May 29, 2026
 added images of how website look on different devices
 thanyanibright
@@ -291,6 +298,8 @@ thanyanibright
 thanyanibright
 committed
 on Apr 28
+
+
    Bibliography
 1-Grid, 2008. domain name search and registration. [Online] 
 Available at: http://1grid.co.za
