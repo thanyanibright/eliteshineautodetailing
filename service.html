@@ -1,137 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Shine Auto Detailing - Services</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO: Part 3 additions ============ -->
+<title>Our Services &amp; Pricing | Elite Shine Auto Detailing</title>
+<meta name="description" content="Compare our Basic Wash, Full Valet, Interior Detailing and Exterior Polishing packages and pricing for cars, SUVs, bakkies, buses and trucks.">
+<meta name="keywords" content="car wash prices Soweto, full valet pricing, interior detailing Gauteng, exterior polishing service">
+<meta name="author" content="Elite Shine Auto Detailing">
+<!-- ================================================= -->
+
+<!-- Part 3 fix: this page was missing BOTH stylesheet links entirely -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/interactive.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="images/elite_shine_logo.jpg" alt="Elite Shine Auto Detailing Logo">
-      <span class="nav-logo-text">Elite Shine<span>Auto Detailing</span></span>
-    </a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="service.html">Service</a>
-    <a href="enquiry.html">Enquiry</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- NAVIGATION -->
+<nav>
+<strong>Elite Shine Auto Detailing</strong>
+<br>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="service.html">Service</a> |
+<a href="enquiry.html">Enquiry</a> |
+<a href="contact.html">Contact</a>
+</nav>
+<hr>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <h1>Our Services</h1>
-    <p>Mobile detailing across Gauteng. We accept cash and EFT. Contact us for a custom quote.</p>
-  </div>
+<h1>Our Service</h1>
+<p>We offer a full range of mobile car wash and detailing services across Gauteng. All prices below are average rates — contact us for a custom quote on specialty vehicles or extra-large jobs.</p>
 
-  <!-- SERVICE 1 -->
-  <section>
-    <div class="service-card">
-      <img src="images/homepic2.jpg" alt="Basic car wash service" onerror="this.style.display='none'">
-      <h2>1. Basic Wash</h2>
-      <p>A thorough exterior rinse, hand wash, and dry. Perfect for regular maintenance to keep your car looking presentable.</p>
-      <h3>What's Included:</h3>
-      <ul>
-        <li>Exterior hand wash and dry</li>
-        <li>Window exterior wipe</li>
-        <li>Tyre wipe</li>
-      </ul>
-      <h3>Pricing:</h3>
-      <table>
-        <tr><th>Vehicle Type</th><th>Price</th></tr>
-        <tr><td>Normal Car (Sedan / Hatchback)</td><td>R150</td></tr>
-        <tr><td>SUV / Bakkie / Minivan</td><td>R200</td></tr>
-        <tr><td>Bus / Truck / Large Commercial</td><td>R500</td></tr>
-      </table>
-      <br>
-      <a href="enquiry.html" class="btn-book">Book This Service</a>
-    </div>
+<!-- ============ NEW IN PART 3: search / filter bar ============ -->
+<div class="filter-bar">
+  <input type="text" id="service-search" placeholder="Search services (e.g. 'interior', 'polish', 'wash')...">
+  <button type="button" class="filter-btn active" data-category="all">All</button>
+  <button type="button" class="filter-btn" data-category="wash">Wash</button>
+  <button type="button" class="filter-btn" data-category="valet">Valet</button>
+  <button type="button" class="filter-btn" data-category="interior">Interior</button>
+  <button type="button" class="filter-btn" data-category="exterior">Exterior</button>
+</div>
+<p id="no-results-msg">No services match your search — try a different word, or contact us directly for a custom job.</p>
+<!-- ============ END search / filter bar ============ -->
 
-    <div class="service-card">
-      <img src="images/inside2.jpg" alt="Full valet service" onerror="this.style.display='none'">
-      <h2>2. Full Valet</h2>
-      <p>Our most popular package. Interior and exterior — your vehicle spotless inside and out.</p>
-      <h3>What's Included:</h3>
-      <ul>
-        <li>Full exterior hand wash and dry</li>
-        <li>Interior vacuum (seats, carpets, boot)</li>
-        <li>Dashboard and console wipe-down</li>
-        <li>Window cleaning inside and outside</li>
-        <li>Door jamb cleaning</li>
-        <li>Tyre dressing</li>
-      </ul>
-      <h3>Pricing:</h3>
-      <table>
-        <tr><th>Vehicle Type</th><th>Price</th></tr>
-        <tr><td>Normal Car (Sedan / Hatchback)</td><td>R450</td></tr>
-        <tr><td>SUV / Bakkie / Minivan</td><td>R600</td></tr>
-        <tr><td>Bus / Truck / Large Commercial</td><td>R1500</td></tr>
-      </table>
-      <br>
-      <a href="enquiry.html" class="btn-book">Book This Service</a>
-    </div>
+<hr>
 
-    <div class="service-card">
-      <img src="images/inside.jpg" alt="Interior detailing service" onerror="this.style.display='none'">
-      <h2>3. Interior Detailing</h2>
-      <p>Deep clean for built-up dirt, stains, pet hair, or odours that a regular valet won't fully remove.</p>
-      <h3>What's Included:</h3>
-      <ul>
-        <li>Deep vacuum of all interior surfaces</li>
-        <li>Seat shampooing (fabric or leather conditioning)</li>
-        <li>Carpet shampooing</li>
-        <li>Dashboard, console, and door panel dressing</li>
-        <li>Roof lining wipe</li>
-        <li>Odour treatment</li>
-      </ul>
-      <h3>Pricing:</h3>
-      <table>
-        <tr><th>Vehicle Type</th><th>Price</th></tr>
-        <tr><td>Normal Car (Sedan / Hatchback)</td><td>R350</td></tr>
-        <tr><td>SUV / Bakkie / Minivan</td><td>R500</td></tr>
-        <tr><td>Bus / Truck / Large Commercial</td><td>R1200</td></tr>
-      </table>
-      <br>
-      <a href="enquiry.html" class="btn-book">Book This Service</a>
-    </div>
+<!-- SERVICE 1: BASIC WASH -->
+<section class="service-block" data-category="wash" data-keywords="basic wash exterior rinse hand wash dry maintenance quick affordable">
+<h2>1. Basic Wash</h2>
+<img src="images/homepic2.jpg" alt="Basic exterior wash being carried out on a customer's car" width="300" loading="lazy">
+<p>Our basic wash covers a thorough exterior rinse, hand wash, and dry. Perfect for regular maintenance to keep your car looking presentable.</p>
+<h3>What's Included:</h3>
+<ul>
+<li>Exterior hand wash</li>
+<li>Rinse and dry</li>
+<li>Window exterior wipe</li>
+<li>Tyre wipe</li>
+</ul>
+<h3>Pricing:</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Vehicle Type</th><th>Price</th></tr>
+<tr><td>Normal Car (Sedan, Hatchback)</td><td>R150</td></tr>
+<tr><td>SUV / Bakkie / Minivan</td><td>R200</td></tr>
+<tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R500</td></tr>
+</table>
+<br>
+<button type="button" class="view-details-btn" data-template="tpl-basic-wash">View Full Details</button>
+<a href="enquiry.html">Book This Service</a>
+</section>
 
-    <div class="service-card">
-      <img src="images/wipeporshe.jpg" alt="Exterior polishing service" onerror="this.style.display='none'">
-      <h2>4. Exterior Polishing</h2>
-      <p>Restore your paintwork's shine. Great for older cars with light scratches, swirl marks, or dull paint.</p>
-      <h3>What's Included:</h3>
-      <ul>
-        <li>Pre-wash and clay bar treatment</li>
-        <li>Machine or hand polish</li>
-        <li>Paint sealant or wax application</li>
-        <li>Chrome and trim dressing</li>
-        <li>Tyre shine</li>
-      </ul>
-      <h3>Pricing:</h3>
-      <table>
-        <tr><th>Vehicle Type</th><th>Price</th></tr>
-        <tr><td>Normal Car (Sedan / Hatchback)</td><td>R400</td></tr>
-        <tr><td>SUV / Bakkie / Minivan</td><td>R550</td></tr>
-        <tr><td>Bus / Truck / Large Commercial</td><td>R1400</td></tr>
-      </table>
-      <br>
-      <a href="enquiry.html" class="btn-book">Book This Service</a>
-    </div>
+<hr>
 
-    <p><em>All prices are averages. Contact us for a personalised quote. We accept cash and EFT.</em></p>
-  </section>
+<!-- SERVICE 2: FULL VALET -->
+<section class="service-block" data-category="valet" data-keywords="full valet interior exterior vacuum dashboard popular complete">
+<h2>2. Full Valet</h2>
+<img src="images/inside2.jpg" alt="Interior of a vehicle being vacuumed as part of a full valet" width="400" loading="lazy">
+<p>Our most popular package. A full valet covers both the interior and exterior of your vehicle, leaving it spotless inside and out.</p>
+<h3>What's Included:</h3>
+<ul>
+<li>Full exterior hand wash and dry</li>
+<li>Interior vacuum (seats, carpets, boot)</li>
+<li>Dashboard and console wipe-down</li>
+<li>Window cleaning (inside and outside)</li>
+<li>Door jamb cleaning</li>
+<li>Tyre dressing</li>
+</ul>
+<h3>Pricing:</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Vehicle Type</th><th>Price</th></tr>
+<tr><td>Normal Car (Sedan, Hatchback)</td><td>R450</td></tr>
+<tr><td>SUV / Bakkie / Minivan</td><td>R600</td></tr>
+<tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1500</td></tr>
+</table>
+<br>
+<button type="button" class="view-details-btn" data-template="tpl-full-valet">View Full Details</button>
+<a href="enquiry.html">Book This Service</a>
+</section>
 
-  <hr>
+<hr>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="service.html">Service</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></p>
-    <p>Follow us: <a href="https://www.facebook.com/EliteShineAutoDetailing">Facebook</a> | <a href="https://www.instagram.com/eliteshineautodetailing">Instagram</a> | <a href="https://www.tiktok.com/@eliteshineauto">TikTok</a></p>
-    <p>&copy; 2024 Elite Shine Auto Detailing. All rights reserved. | Soweto, Johannesburg 1019 Koma Str Jabulani</p>
-  </footer>
+<!-- SERVICE 3: INTERIOR DETAILING -->
+<section class="service-block" data-category="interior" data-keywords="interior detailing deep clean seat shampoo carpet odour stains pet hair">
+<h2>3. Interior Detailing</h2>
+<img src="images/inside.jpg" alt="Seats and carpets being deep-cleaned during an interior detailing session" width="400" loading="lazy">
+<p>A deep clean of your vehicle's interior. Ideal if your car has built-up dirt, stains, pet hair, or odours that a regular valet won't fully remove.</p>
+<h3>What's Included:</h3>
+<ul>
+<li>Deep vacuum of all interior surfaces</li>
+<li>Seat shampooing (fabric or leather conditioning)</li>
+<li>Carpet shampooing</li>
+<li>Dashboard, console, and door panel cleaning and dressing</li>
+<li>Roof lining wipe</li>
+<li>Odour treatment</li>
+</ul>
+<h3>Pricing:</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Vehicle Type</th><th>Price</th></tr>
+<tr><td>Normal Car (Sedan, Hatchback)</td><td>R350</td></tr>
+<tr><td>SUV / Bakkie / Minivan</td><td>R500</td></tr>
+<tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1200</td></tr>
+</table>
+<br>
+<button type="button" class="view-details-btn" data-template="tpl-interior-detailing">View Full Details</button>
+<a href="enquiry.html">Book This Service</a>
+</section>
 
+<hr>
+
+<!-- SERVICE 4: EXTERIOR POLISHING -->
+<section class="service-block" data-category="exterior" data-keywords="exterior polishing paint clay bar wax sealant scratches swirl shine">
+<h2>4. Exterior Polishing</h2>
+<img src="images/wipeporshe.jpg" alt="Exterior paintwork being hand-polished to restore shine" width="400" loading="lazy">
+<p>Restore your paintwork's shine with our exterior polishing service. Great for older cars or vehicles with light scratches, swirl marks, or dull paint.</p>
+<h3>What's Included:</h3>
+<ul>
+<li>Pre-wash and clay bar treatment</li>
+<li>Machine or hand polish</li>
+<li>Paint sealant or wax application</li>
+<li>Chrome and trim dressing</li>
+<li>Tyre shine</li>
+</ul>
+<h3>Pricing:</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Vehicle Type</th><th>Price</th></tr>
+<tr><td>Normal Car (Sedan, Hatchback)</td><td>R400</td></tr>
+<tr><td>SUV / Bakkie / Minivan</td><td>R550</td></tr>
+<tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1400</td></tr>
+</table>
+<br>
+<button type="button" class="view-details-btn" data-template="tpl-exterior-polishing">View Full Details</button>
+<a href="enquiry.html">Book This Service</a>
+</section>
+
+<hr>
+
+<!-- NOTE ON PRICES -->
+<section>
+<h2>Note on Pricing</h2>
+<p>All prices listed are averages and may vary depending on the condition of the vehicle and specific customer requirements. Contact us for a personalised quote.</p>
+<p>We accept cash and EFT payments.</p>
+</section>
+
+<hr>
+
+<!-- FOOTER -->
+<footer>
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="service.html">Service</a> |
+<a href="enquiry.html">Enquiry</a> |
+<a href="contact.html">Contact</a>
+</p>
+<p>Follow us: <a href="https://www.facebook.com/EliteShineAutoDetailing">Facebook</a> | <a href="https://www.instagram.com/eliteshineautodetailing">Instagram</a> | <a href="https://www.tiktok.com/@eliteshineauto">TikTok</a></p>
+<p>&copy; 2024 Elite Shine Auto Detailing. All rights reserved. | Soweto, Johannesburg 1019 Koma Str Jabulani</p>
+</footer>
+
+<!-- ============ NEW IN PART 3: hidden detail templates for the modal ============ -->
+<!-- js/services.js copies the matching template's content into the modal when
+     a "View Full Details" button is clicked. Edit the text below to change
+     what shows up in each pop-up. -->
+
+<template id="tpl-basic-wash">
+  <h3>Basic Wash — Full Details</h3>
+  <p><strong>Estimated time:</strong> 20–30 minutes</p>
+  <p><strong>Best for:</strong> Weekly or fortnightly maintenance washes, or cars that just need a quick refresh between deeper details.</p>
+  <p><strong>Add-ons available on request:</strong> Tyre shine upgrade, air freshener, wheel rim deep-clean.</p>
+</template>
+
+<template id="tpl-full-valet">
+  <h3>Full Valet — Full Details</h3>
+  <p><strong>Estimated time:</strong> 1–1.5 hours</p>
+  <p><strong>Best for:</strong> Customers who want both the inside and outside looking their best — ideal before a road trip, a special occasion, or simply once a month.</p>
+  <p><strong>Add-ons available on request:</strong> Leather conditioning, engine bay wipe-down, headlight restoration.</p>
+</template>
+
+<template id="tpl-interior-detailing">
+  <h3>Interior Detailing — Full Details</h3>
+  <p><strong>Estimated time:</strong> 1.5–2 hours</p>
+  <p><strong>Best for:</strong> Vehicles with stubborn stains, pet hair, spilled liquids, or smoke/food odours that a normal valet can't fully remove.</p>
+  <p><strong>Add-ons available on request:</strong> Ozone odour treatment, stain-specific spot treatment, boot/trunk deep clean.</p>
+</template>
+
+<template id="tpl-exterior-polishing">
+  <h3>Exterior Polishing — Full Details</h3>
+  <p><strong>Estimated time:</strong> 1.5–2.5 hours, depending on paint condition</p>
+  <p><strong>Best for:</strong> Older vehicles, cars with visible swirl marks or light scratches, or anyone wanting that "showroom shine" before selling or showing off their car.</p>
+  <p><strong>Add-ons available on request:</strong> Ceramic spray sealant, headlight polishing, chrome trim restoration.</p>
+</template>
+<!-- ============ END hidden detail templates ============ -->
+
+<script src="js/main.js" defer></script>
+<script src="js/services.js" defer></script>
 </body>
 </html>
