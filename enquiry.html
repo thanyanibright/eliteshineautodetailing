@@ -1,164 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Shine Auto Detailing - Enquiry &amp; Booking</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO: Part 3 additions ============ -->
+<title>Book a Service / Enquiry | Elite Shine Auto Detailing</title>
+<meta name="description" content="Request a mobile car wash or detailing booking online. Choose your vehicle type, service and preferred date — we'll confirm within 2 hours.">
+<meta name="keywords" content="book car wash Soweto, car detailing booking, mobile valet enquiry Gauteng">
+<meta name="author" content="Elite Shine Auto Detailing">
+<!-- ================================================= -->
+
+<!-- Part 3 fix: this page was missing its stylesheet link entirely -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/interactive.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="images/elite_shine_logo.jpg" alt="Elite Shine Auto Detailing Logo">
-      <span class="nav-logo-text">Elite Shine<span>Auto Detailing</span></span>
-    </a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="service.html">Service</a>
-    <a href="enquiry.html">Enquiry</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- NAVIGATION -->
+<nav>
+<strong>Elite Shine Auto Detailing</strong>
+<br>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="service.html">Service</a> |
+<a href="enquiry.html">Enquiry</a> |
+<a href="contact.html">Contact</a>
+</nav>
+<hr>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <h1>Enquiry &amp; Booking</h1>
-    <p>Fill in the form below to request a booking. We will confirm within 2 hours.</p>
-  </div>
+<h1>Enquiry &amp; Booking</h1>
+<p>Fill in the form below to request a booking or ask us anything. We will get back to you as soon as possible to confirm your appointment.</p>
 
-  <!-- BOOKING FORM -->
-  <section>
-    <img src="images/exteriorsupra.jpg" alt="Exterior detailing on a Supra" style="max-width:100%;border-radius:6px;margin-bottom:1.5rem;" onerror="this.style.display='none'">
+<img src="images/exteriorsupra.jpg" alt="Freshly detailed Toyota Supra exterior" width="300">
 
-    <h2>Booking Request Form</h2>
-    <form action="#" method="post">
+<hr>
 
-      <p>
-        <label for="fullname">Full Name *</label>
-        <input type="text" id="fullname" name="fullname" placeholder="e.g. Thabo Dlamini" required>
-      </p>
+<!-- BOOKING FORM -->
+<section>
+<h2>Booking Request Form</h2>
+<!-- Part 3: id added so js/forms.js can find this form;
+     action="#" kept since there is no back-end — JavaScript
+     intercepts the submit event and handles everything itself. -->
+<form id="enquiry-form" action="#" method="post" novalidate>
 
-      <p>
-        <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" placeholder="e.g. 071 234 5678" required>
-      </p>
+<p>
+<label for="fullname">Full Name: *</label><br>
+<input type="text" id="fullname" name="fullname" placeholder="e.g. Thabo Dlamini" size="40" required>
+</p>
 
-      <p>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="e.g. thabo@email.com">
-      </p>
+<p>
+<label for="phone">Phone Number: *</label><br>
+<input type="tel" id="phone" name="phone" placeholder="e.g. 071 234 5678" size="40" required>
+</p>
 
-      <p>
-        <label for="location">Your Location / Address *</label>
-        <input type="text" id="location" name="location" placeholder="e.g. Meadowlands, Soweto" required>
-      </p>
+<p>
+<label for="email">Email Address:</label><br>
+<input type="email" id="email" name="email" placeholder="e.g. thabo@email.com" size="40">
+</p>
 
-      <p>
-        <label for="vehicle_type">Vehicle Type *</label>
-        <select id="vehicle_type" name="vehicle_type" required>
-          <option value="">-- Select Vehicle Type --</option>
-          <option value="normal_car">Normal Car (Sedan / Hatchback)</option>
-          <option value="suv">SUV / Bakkie / Minivan</option>
-          <option value="bus_truck">Bus / Truck / Large Commercial Vehicle</option>
-        </select>
-      </p>
+<p>
+<label for="location">Your Location / Address: *</label><br>
+<input type="text" id="location" name="location" placeholder="e.g. Meadowlands, Soweto" size="40" required>
+</p>
 
-      <p>
-        <label for="service">Service Required *</label>
-        <select id="service" name="service" required>
-          <option value="">-- Select a Service --</option>
-          <option value="basic_wash">Basic Wash</option>
-          <option value="full_valet">Full Valet</option>
-          <option value="interior_detailing">Interior Detailing</option>
-          <option value="exterior_polishing">Exterior Polishing</option>
-          <option value="unsure">Not sure — please advise</option>
-        </select>
-      </p>
+<p>
+<label for="vehicle_type">Vehicle Type: *</label><br>
+<select id="vehicle_type" name="vehicle_type" required>
+<option value="">-- Select Vehicle Type --</option>
+<option value="normal_car">Normal Car (Sedan / Hatchback)</option>
+<option value="suv">SUV / Bakkie / Minivan</option>
+<option value="bus_truck">Bus / Truck / Large Commercial Vehicle</option>
+</select>
+</p>
 
-      <p>
-        <label for="date">Preferred Date *</label>
-        <input type="date" id="date" name="date" required>
-      </p>
+<p>
+<label for="service">Service Required: *</label><br>
+<select id="service" name="service" required>
+<option value="">-- Select a Service --</option>
+<option value="basic_wash">Basic Wash</option>
+<option value="full_valet">Full Valet</option>
+<option value="interior_detailing">Interior Detailing</option>
+<option value="exterior_polishing">Exterior Polishing</option>
+<option value="unsure">Not sure — please advise</option>
+</select>
+</p>
 
-      <p>
-        <label for="time">Preferred Time</label>
-        <select id="time" name="time">
-          <option value="">-- Select Preferred Time --</option>
-          <option value="morning">Morning (8am – 12pm)</option>
-          <option value="afternoon">Afternoon (12pm – 4pm)</option>
-          <option value="flexible">I am flexible</option>
-        </select>
-      </p>
+<p>
+<label for="date">Preferred Date: *</label><br>
+<input type="date" id="date" name="date" required>
+</p>
 
-      <p>
-        <label for="special_requests">Special Requests or Additional Information</label>
-        <textarea id="special_requests" name="special_requests" rows="5" placeholder="e.g. My car has pet hair on the seats. Please bring stain remover."></textarea>
-      </p>
+<p>
+<label for="time">Preferred Time:</label><br>
+<select id="time" name="time">
+<option value="">-- Select Preferred Time --</option>
+<option value="morning">Morning (8am - 12pm)</option>
+<option value="afternoon">Afternoon (12pm - 4pm)</option>
+<option value="flexible">I am flexible</option>
+</select>
+</p>
 
-      <p><em>* Required fields</em></p>
+<p>
+<label for="special_requests">Special Requests or Additional Information:</label><br>
+<textarea id="special_requests" name="special_requests" rows="5" cols="40" placeholder="e.g. My car has pet hair on the seats. Please bring stain remover."></textarea>
+</p>
 
-      <p>
-        <input type="submit" value="SUBMIT BOOKING REQUEST">
-        <input type="reset" value="CLEAR FORM">
-      </p>
+<p>* Required fields</p>
 
-    </form>
-  </section>
+<p>
+<input type="submit" value="SUBMIT BOOKING REQUEST">
+<input type="reset" value="CLEAR FORM">
+</p>
 
-  <hr>
+</form>
 
-  <!-- DIRECT CONTACT -->
-  <section>
-    <h2>Prefer to Contact Us Directly?</h2>
-    <p>Phone / WhatsApp: <strong>079 732 5580</strong></p>
-    <p>Email: <strong>eliteshineauto@gmail.com</strong></p>
-  </section>
+<!-- Part 3: js/forms.js writes the validation result / price estimate in here -->
+<div id="enquiry-response" class="response-box" aria-live="polite"></div>
 
-  <hr>
+</section>
 
-  <!-- FEEDBACK FORM -->
-  <section>
-    <h2>Leave Us Feedback</h2>
-    <p>Already used our service? We would love to hear what you think!</p>
-    <form action="#" method="post">
+<hr>
 
-      <p>
-        <label for="fb_name">Your Name</label>
-        <input type="text" id="fb_name" name="fb_name" placeholder="Your name">
-      </p>
+<!-- QUICK CONTACT ALTERNATIVE -->
+<section>
+<h2>Prefer to Contact Us Directly?</h2>
+<p>If you would rather call or WhatsApp us, reach out using the details below:</p>
+<p>Phone: 079 732 5580</p>
+<p>WhatsApp: 079 732 5580</p>
+<p>Email: eliteshineauto@gmail.com</p>
+</section>
 
-      <p>
-        <label for="fb_rating">Rating</label>
-        <select id="fb_rating" name="fb_rating">
-          <option value="5">5 Stars — Excellent</option>
-          <option value="4">4 Stars — Very Good</option>
-          <option value="3">3 Stars — Good</option>
-          <option value="2">2 Stars — Fair</option>
-          <option value="1">1 Star — Poor</option>
-        </select>
-      </p>
+<hr>
 
-      <p>
-        <label for="fb_message">Your Feedback</label>
-        <textarea id="fb_message" name="fb_message" rows="5" placeholder="Tell us about your experience..."></textarea>
-      </p>
+<!-- FEEDBACK SECTION -->
+<section>
+<h2>Leave Us Feedback</h2>
+<p>Already used our service? We would love to hear what you think!</p>
+<form action="#" method="post" novalidate>
 
-      <p>
-        <input type="submit" value="SUBMIT FEEDBACK">
-      </p>
+<p>
+<label for="fb_name">Your Name:</label><br>
+<input type="text" id="fb_name" name="fb_name" placeholder="Your name" size="40">
+</p>
 
-    </form>
-  </section>
+<p>
+<label for="fb_rating">Rating:</label><br>
+<select id="fb_rating" name="fb_rating">
+<option value="5">5 Stars - Excellent</option>
+<option value="4">4 Stars - Very Good</option>
+<option value="3">3 Stars - Good</option>
+<option value="2">2 Stars - Fair</option>
+<option value="1">1 Star - Poor</option>
+</select>
+</p>
 
-  <hr>
+<p>
+<label for="fb_message">Your Feedback:</label><br>
+<textarea id="fb_message" name="fb_message" rows="5" cols="40" placeholder="Tell us about your experience..."></textarea>
+</p>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="service.html">Service</a> | <a href="enquiry.html">Enquiry</a> | <a href="contact.html">Contact</a></p>
-    <p>Follow us: <a href="https://www.facebook.com/EliteShineAutoDetailing">Facebook</a> | <a href="https://www.instagram.com/eliteshineautodetailing">Instagram</a> | <a href="https://www.tiktok.com/@eliteshineauto">TikTok</a></p>
-    <p>&copy; 2024 Elite Shine Auto Detailing. All rights reserved. | Soweto, Johannesburg 1019 Koma Str Jabulani</p>
-  </footer>
+<p>
+<input type="submit" value="SUBMIT FEEDBACK">
+</p>
 
+</form>
+</section>
+
+<hr>
+
+<!-- FOOTER -->
+<footer>
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="service.html">Service</a> |
+<a href="enquiry.html">Enquiry</a> |
+<a href="contact.html">Contact</a>
+</p>
+<p>Follow us: <a href="https://www.facebook.com/EliteShineAutoDetailing">Facebook</a> | <a href="https://www.instagram.com/eliteshineautodetailing">Instagram</a> | <a href="https://www.tiktok.com/@eliteshineauto">TikTok</a></p>
+<p>&copy; 2024 Elite Shine Auto Detailing. All rights reserved. | Soweto, Johannesburg 1019 Koma Str Jabulani</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/forms.js" defer></script>
 </body>
 </html>
