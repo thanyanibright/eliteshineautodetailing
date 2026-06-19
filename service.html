@@ -14,8 +14,6 @@
 <!-- Part 3 fix: this page was missing BOTH stylesheet links entirely -->
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/interactive.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,8 +29,10 @@
 </nav>
 <hr>
 
+<div class="page-header">
 <h1>Our Service</h1>
 <p>We offer a full range of mobile car wash and detailing services across Gauteng. All prices below are average rates — contact us for a custom quote on specialty vehicles or extra-large jobs.</p>
+</div>
 
 <!-- ============ NEW IN PART 3: search / filter bar ============ -->
 <div class="filter-bar">
@@ -49,9 +49,9 @@
 <hr>
 
 <!-- SERVICE 1: BASIC WASH -->
-<section class="service-block" data-category="wash" data-keywords="basic wash exterior rinse hand wash dry maintenance quick affordable">
+<section class="service-card" data-category="wash" data-keywords="basic wash exterior rinse hand wash dry maintenance quick affordable">
 <h2>1. Basic Wash</h2>
-<img src="images/homepic2.jpg" alt="Basic exterior wash being carried out on a customer's car" width="300" loading="lazy">
+<img src="images/homepic2.jpg" alt="Basic exterior wash being carried out on a customer's car" loading="lazy">
 <p>Our basic wash covers a thorough exterior rinse, hand wash, and dry. Perfect for regular maintenance to keep your car looking presentable.</p>
 <h3>What's Included:</h3>
 <ul>
@@ -67,17 +67,18 @@
 <tr><td>SUV / Bakkie / Minivan</td><td>R200</td></tr>
 <tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R500</td></tr>
 </table>
-<br>
+<div class="service-actions">
 <button type="button" class="view-details-btn" data-template="tpl-basic-wash">View Full Details</button>
-<a href="enquiry.html">Book This Service</a>
+<a href="enquiry.html" class="btn-book">Book This Service</a>
+</div>
 </section>
 
 <hr>
 
 <!-- SERVICE 2: FULL VALET -->
-<section class="service-block" data-category="valet" data-keywords="full valet interior exterior vacuum dashboard popular complete">
+<section class="service-card" data-category="valet" data-keywords="full valet interior exterior vacuum dashboard popular complete">
 <h2>2. Full Valet</h2>
-<img src="images/inside2.jpg" alt="Interior of a vehicle being vacuumed as part of a full valet" width="400" loading="lazy">
+<img src="images/inside2.jpg" alt="Interior of a vehicle being vacuumed as part of a full valet" loading="lazy">
 <p>Our most popular package. A full valet covers both the interior and exterior of your vehicle, leaving it spotless inside and out.</p>
 <h3>What's Included:</h3>
 <ul>
@@ -95,17 +96,18 @@
 <tr><td>SUV / Bakkie / Minivan</td><td>R600</td></tr>
 <tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1500</td></tr>
 </table>
-<br>
+<div class="service-actions">
 <button type="button" class="view-details-btn" data-template="tpl-full-valet">View Full Details</button>
-<a href="enquiry.html">Book This Service</a>
+<a href="enquiry.html" class="btn-book">Book This Service</a>
+</div>
 </section>
 
 <hr>
 
 <!-- SERVICE 3: INTERIOR DETAILING -->
-<section class="service-block" data-category="interior" data-keywords="interior detailing deep clean seat shampoo carpet odour stains pet hair">
+<section class="service-card" data-category="interior" data-keywords="interior detailing deep clean seat shampoo carpet odour stains pet hair">
 <h2>3. Interior Detailing</h2>
-<img src="images/inside.jpg" alt="Seats and carpets being deep-cleaned during an interior detailing session" width="400" loading="lazy">
+<img src="images/inside.jpg" alt="Seats and carpets being deep-cleaned during an interior detailing session" loading="lazy">
 <p>A deep clean of your vehicle's interior. Ideal if your car has built-up dirt, stains, pet hair, or odours that a regular valet won't fully remove.</p>
 <h3>What's Included:</h3>
 <ul>
@@ -123,17 +125,18 @@
 <tr><td>SUV / Bakkie / Minivan</td><td>R500</td></tr>
 <tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1200</td></tr>
 </table>
-<br>
+<div class="service-actions">
 <button type="button" class="view-details-btn" data-template="tpl-interior-detailing">View Full Details</button>
-<a href="enquiry.html">Book This Service</a>
+<a href="enquiry.html" class="btn-book">Book This Service</a>
+</div>
 </section>
 
 <hr>
 
 <!-- SERVICE 4: EXTERIOR POLISHING -->
-<section class="service-block" data-category="exterior" data-keywords="exterior polishing paint clay bar wax sealant scratches swirl shine">
+<section class="service-card" data-category="exterior" data-keywords="exterior polishing paint clay bar wax sealant scratches swirl shine">
 <h2>4. Exterior Polishing</h2>
-<img src="images/wipeporshe.jpg" alt="Exterior paintwork being hand-polished to restore shine" width="400" loading="lazy">
+<img src="images/wipeporshe.jpg" alt="Exterior paintwork being hand-polished to restore shine" loading="lazy">
 <p>Restore your paintwork's shine with our exterior polishing service. Great for older cars or vehicles with light scratches, swirl marks, or dull paint.</p>
 <h3>What's Included:</h3>
 <ul>
@@ -150,10 +153,30 @@
 <tr><td>SUV / Bakkie / Minivan</td><td>R550</td></tr>
 <tr><td>Bus / Truck / Large Commercial Vehicle</td><td>R1400</td></tr>
 </table>
-<br>
+<div class="service-actions">
 <button type="button" class="view-details-btn" data-template="tpl-exterior-polishing">View Full Details</button>
-<a href="enquiry.html">Book This Service</a>
+<a href="enquiry.html" class="btn-book">Book This Service</a>
+</div>
 </section>
+
+<hr>
+
+<!-- ============ NEW IN PART 3: Add-On Services ============ -->
+<section>
+<h2>Add-On Services</h2>
+<p>Want to go a step further? These extras can be added to any of the four packages above — just mention them when you book on the <a href="enquiry.html">Enquiry page</a>.</p>
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Add-On</th><th>Description</th><th>Price</th></tr>
+<tr><td>Engine Bay Wipe-Down</td><td>Dust and grime removal around the engine bay (no water near electronics)</td><td>R100</td></tr>
+<tr><td>Headlight Restoration</td><td>Polishes out yellowing/haziness for clearer, brighter headlights</td><td>R150 per pair</td></tr>
+<tr><td>Pet Hair Removal</td><td>Specialised tools and products to lift embedded pet hair from seats and carpets</td><td>R120</td></tr>
+<tr><td>Ozone Odour Treatment</td><td>Removes smoke, food, or musty odours at the source rather than masking them</td><td>R200</td></tr>
+<tr><td>Ceramic Spray Sealant</td><td>Adds extra shine and water-repellence on top of a standard wax</td><td>R250</td></tr>
+<tr><td>Chrome &amp; Trim Restoration</td><td>Revives faded or oxidised chrome and plastic trim</td><td>R130</td></tr>
+</table>
+<p><em>Add-on prices are for a normal car; SUVs, bakkies, buses and trucks may cost slightly more depending on size — ask us for an exact quote.</em></p>
+</section>
+<!-- ============ END Add-On Services ============ -->
 
 <hr>
 
@@ -163,6 +186,38 @@
 <p>All prices listed are averages and may vary depending on the condition of the vehicle and specific customer requirements. Contact us for a personalised quote.</p>
 <p>We accept cash and EFT payments.</p>
 </section>
+
+<hr>
+
+<!-- ============ NEW CONTENT: service FAQ ============ -->
+<section>
+<h2>Service Questions</h2>
+<div class="faq-list">
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">What's the difference between a Full Valet and Interior Detailing?</button>
+    <div class="faq-answer">
+      <p>A Full Valet covers both the inside and outside of your car at a standard level of clean. Interior Detailing is interior-only, but much deeper — it includes shampooing seats and carpets and treating odours, which the Full Valet doesn't include.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">Do you bring your own water and electricity?</button>
+    <div class="faq-answer">
+      <p>We can work with your outdoor tap and a standard plug point if available. If neither is available at your location, let us know when booking — we can bring our own water supply for an additional callout fee.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">Can you remove deep scratches or dents?</button>
+    <div class="faq-answer">
+      <p>Our Exterior Polishing service can reduce the appearance of light scratches and swirl marks, but we don't offer panel beating, paintwork repair, or dent removal. For serious bodywork damage, we can recommend a trusted panel shop in your area.</p>
+    </div>
+  </div>
+
+</div>
+</section>
+<!-- ============ END new content ============ -->
 
 <hr>
 

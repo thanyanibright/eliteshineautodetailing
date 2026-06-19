@@ -1,25 +1,26 @@
 /* ============================================================
    interactive.css
    Elite Shine Auto Detailing — Part 3
-   Styling for everything added in Part 3: accordion/FAQ, gallery
+   Styling for everything added in Part 3: FAQ accordion, gallery
    lightbox, service modal, search/filter bar, form responses,
    the Leaflet map, scroll-reveal animation and the back-to-top
    button.
 
-   Colours and fonts re-use the brand already defined in the
-   Project Proposal:
-     Deep Blue  #0A3D62   Light Blue #3C91E6
-     White      #FFFFFF   Black      #1B1B1B
-     Headings: Montserrat | Body: Open Sans | Buttons/CTA: Lato
+   IMPORTANT: this file is loaded AFTER css/style.css, so it reuses
+   the SAME CSS variables already defined there (--navy, --blue,
+   --blue-light, --blue-pale, --blue-border, --text-dark, --text-mid,
+   --surface, --font-heading [Oswald], --font-body [Lato], --radius).
+   We do NOT redefine our own colours/fonts here — that was the bug
+   in the first version of this file, and it's what made the new
+   buttons/text look mismatched and low-contrast against the rest
+   of the site.
    ============================================================ */
 
+/* Two extra colours not in the original palette, used only for
+   form success/error messages: */
 :root {
-  --eshine-deep-blue: #0A3D62;
-  --eshine-light-blue: #3C91E6;
-  --eshine-white: #FFFFFF;
-  --eshine-black: #1B1B1B;
-  --eshine-error: #C0392B;
-  --eshine-success: #1E7B45;
+  --eshine-error: #b3261e;
+  --eshine-success: #1d7a3c;
 }
 
 /* ---------------------------------------------------------- */
@@ -46,9 +47,19 @@
 /* Active navigation link                                      */
 /* ---------------------------------------------------------- */
 nav a.active-link {
-  font-weight: 700;
-  text-decoration: underline;
-  color: var(--eshine-light-blue);
+  background-color: var(--blue);
+  color: #ffffff;
+}
+
+/* Fix: on about/service/enquiry/contact, the plain "Elite Shine Auto
+   Detailing" business-name text in the nav had no colour rule of its
+   own, so it inherited the dark navy BODY text colour — nearly
+   invisible against the dark navy NAV background. */
+nav strong {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  font-size: 1.1rem;
 }
 
 /* ---------------------------------------------------------- */
@@ -58,45 +69,45 @@ nav a.active-link {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: none;
-  background-color: var(--eshine-deep-blue);
-  color: var(--eshine-white);
+  background-color: var(--navy);
+  color: #ffffff;
   font-size: 1.3rem;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background-color 0.2s;
   z-index: 900;
+  box-shadow: 0 4px 14px rgba(13,34,81,0.35);
 }
 #back-to-top.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-#back-to-top:hover { background-color: var(--eshine-light-blue); }
+#back-to-top:hover { background-color: var(--blue); }
 
 /* ---------------------------------------------------------- */
 /* FAQ Accordion (homepage)                                    */
 /* ---------------------------------------------------------- */
 .faq-list { max-width: 800px; margin: 0 auto; }
 
-.faq-item {
-  border-bottom: 1px solid #d8e3ee;
-}
+.faq-item { border-bottom: 1px solid var(--blue-border); }
 
 .faq-question {
   width: 100%;
   text-align: left;
   background: none;
   border: none;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.05rem;
-  color: var(--eshine-deep-blue);
+  letter-spacing: 0.5px;
+  color: var(--navy);
   padding: 16px 36px 16px 4px;
   position: relative;
   cursor: pointer;
@@ -106,15 +117,13 @@ nav a.active-link {
   content: "+";
   position: absolute;
   right: 6px;
-  top: 14px;
-  font-size: 1.4rem;
-  color: var(--eshine-light-blue);
+  top: 12px;
+  font-size: 1.5rem;
+  color: var(--blue);
   transition: transform 0.25s ease;
 }
 
-.faq-question[aria-expanded="true"]::after {
-  transform: rotate(45deg);
-}
+.faq-question[aria-expanded="true"]::after { transform: rotate(45deg); }
 
 .faq-answer {
   max-height: 0;
@@ -126,7 +135,8 @@ nav a.active-link {
 .faq-answer p {
   padding-bottom: 16px;
   margin: 0;
-  color: var(--eshine-black);
+  color: var(--text-mid);
+  max-width: 100%;
 }
 
 /* ---------------------------------------------------------- */
@@ -137,68 +147,101 @@ nav a.active-link {
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  margin: 20px 0 30px;
+  margin: 1.5rem 0;
 }
 
 #service-search {
   flex: 1 1 220px;
-  padding: 10px 14px;
-  border: 1px solid #b9c8d6;
-  border-radius: 6px;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--blue-border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--blue-pale);
+}
+
+#service-search:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: #ffffff;
 }
 
 .filter-btn {
-  font-family: 'Lato', Arial, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  padding: 10px 16px;
-  border-radius: 6px;
-  border: 1px solid var(--eshine-deep-blue);
-  background-color: var(--eshine-white);
-  color: var(--eshine-deep-blue);
+  letter-spacing: 0.5px;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--blue);
+  background-color: #ffffff;
+  color: var(--blue);
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.filter-btn:hover { background-color: #e8f1fb; }
+.filter-btn:hover { background-color: var(--blue-light); }
 
 .filter-btn.active {
-  background-color: var(--eshine-deep-blue);
-  color: var(--eshine-white);
+  background-color: var(--blue);
+  color: #ffffff;
 }
 
 #no-results-msg {
   display: none;
   font-style: italic;
-  color: var(--eshine-black);
-  margin: 20px 0;
+  color: var(--text-mid);
+  margin: 1.2rem 0;
 }
 
 .view-details-btn {
   display: inline-block;
-  margin-top: 10px;
-  margin-right: 10px;
-  font-family: 'Lato', Arial, sans-serif;
-  font-weight: 700;
+  margin-top: 0.6rem;
+  margin-right: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  padding: 10px 18px;
-  border-radius: 6px;
-  border: 2px solid var(--eshine-light-blue);
-  background-color: var(--eshine-white);
-  color: var(--eshine-deep-blue);
+  letter-spacing: 0.5px;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--navy);
+  background-color: #ffffff;
+  color: var(--navy);
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.view-details-btn:hover {
-  background-color: var(--eshine-light-blue);
-  color: var(--eshine-white);
+.view-details-btn:hover { background-color: var(--navy); color: #ffffff; }
+
+/* ---------------------------------------------------------- */
+/* Service card image + button row refinements                 */
+/* ---------------------------------------------------------- */
+/* style.css already gives .service-card img { max-width:100%; height:auto; }
+   This adds a fixed height + crop so all four photos line up neatly
+   instead of stretching the card to whatever size each photo happens
+   to be. */
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
+
+/* Groups "View Full Details" and "Book This Service" together with
+   even spacing, instead of them sitting awkwardly on their own line. */
+.service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+/* "Book This Service" re-uses the site's real .btn-book style already
+   defined in style.css, so no extra colour rules are needed here —
+   this comment is just a reminder of why no .book-btn class exists. */
 
 /* ---------------------------------------------------------- */
 /* Modal (service details) + Lightbox (gallery) shared base     */
@@ -207,7 +250,7 @@ nav a.active-link {
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(11, 20, 30, 0.85);
+  background-color: rgba(13, 34, 81, 0.85); /* uses the navy tone, not an arbitrary black */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,72 +261,78 @@ nav a.active-link {
 }
 
 .modal-overlay.open,
-.lightbox-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
+.lightbox-overlay.open { opacity: 1; visibility: visible; }
 
 body.lightbox-locked { overflow: hidden; }
 
 .modal-box {
-  background-color: var(--eshine-white);
+  background-color: #ffffff;
   max-width: 560px;
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
-  border-radius: 10px;
-  padding: 36px 28px 28px;
+  border-radius: var(--radius);
+  padding: 2.2rem 1.8rem 1.8rem;
   position: relative;
+  box-shadow: 0 10px 40px rgba(13,34,81,0.3);
 }
 
 .modal-content h3 {
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: var(--eshine-deep-blue);
+  font-family: var(--font-heading);
+  color: var(--navy);
   margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-content p {
+  color: var(--text-mid);
+  font-family: var(--font-body);
+  margin-bottom: 0.8rem;
 }
 
 .modal-close,
 .lightbox-close {
   position: absolute;
-  top: 14px;
+  top: 12px;
   right: 14px;
   background: none;
   border: none;
   font-size: 1.8rem;
   line-height: 1;
-  color: var(--eshine-black);
+  color: var(--navy);
   cursor: pointer;
 }
 
-.lightbox-close { top: 20px; right: 24px; color: var(--eshine-white); }
+.lightbox-close { top: 20px; right: 24px; color: #ffffff; }
 
-.lightbox-figure {
-  max-width: 90vw;
-  max-height: 85vh;
-  text-align: center;
-}
+.lightbox-figure { max-width: 90vw; max-height: 85vh; text-align: center; }
 
 .lightbox-img {
   max-width: 90vw;
   max-height: 75vh;
-  border-radius: 6px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 .lightbox-caption {
-  color: var(--eshine-white);
-  font-family: 'Open Sans', Arial, sans-serif;
-  margin-top: 10px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  margin-top: 12px;
 }
 
 .lightbox-prev,
 .lightbox-next {
   background: none;
   border: none;
-  color: var(--eshine-white);
+  color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
   padding: 0 18px;
 }
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover { color: #5bc8f5; }
 
 /* ---------------------------------------------------------- */
 /* Form error / response messages                              */
@@ -291,33 +340,32 @@ body.lightbox-locked { overflow: hidden; }
 .error-msg {
   display: block;
   color: var(--eshine-error);
+  font-family: var(--font-body);
   font-size: 0.85rem;
   margin-top: 4px;
 }
 
-.input-invalid {
-  border: 1px solid var(--eshine-error) !important;
-  outline: none;
-}
+.input-invalid { border-color: var(--eshine-error) !important; }
 
 .response-box {
-  margin-top: 20px;
-  padding: 16px 18px;
-  border-radius: 8px;
-  font-family: 'Open Sans', Arial, sans-serif;
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
   line-height: 1.5;
   display: none;
+  max-width: 680px;
 }
 
 .response-success {
-  background-color: #e5f5ea;
+  background-color: #e3f5e8;
   border: 1px solid var(--eshine-success);
   color: var(--eshine-success);
   display: block;
 }
 
 .response-error {
-  background-color: #fbeae8;
+  background-color: #fbe9e7;
   border: 1px solid var(--eshine-error);
   color: var(--eshine-error);
   display: block;
@@ -325,18 +373,18 @@ body.lightbox-locked { overflow: hidden; }
 
 .send-email-btn {
   display: inline-block;
-  margin-top: 12px;
-  font-family: 'Lato', Arial, sans-serif;
-  font-weight: 700;
+  margin-top: 0.8rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  background-color: var(--eshine-deep-blue);
-  color: var(--eshine-white) !important;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
+  letter-spacing: 1px;
+  background-color: var(--navy);
+  color: #ffffff !important;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  text-decoration: none !important;
 }
-.send-email-btn:hover { background-color: var(--eshine-light-blue); }
+.send-email-btn:hover { background-color: var(--blue); }
 
 /* ---------------------------------------------------------- */
 /* Leaflet map container                                       */
@@ -344,23 +392,32 @@ body.lightbox-locked { overflow: hidden; }
 #map {
   height: 380px;
   width: 100%;
-  border-radius: 10px;
-  margin: 20px 0;
-  border: 1px solid #b9c8d6;
+  border-radius: var(--radius);
+  margin: 1.2rem 0;
+  border: 1px solid var(--blue-border);
+  box-shadow: 0 2px 12px rgba(13,34,81,0.07);
 }
 
+/* Leaflet injects its own inline-styled controls/markers — this just
+   makes sure its popups use the site's fonts instead of the browser default */
+.leaflet-popup-content { font-family: var(--font-body); color: var(--text-dark); }
+.leaflet-popup-content strong { font-family: var(--font-heading); color: var(--navy); }
+
 /* ---------------------------------------------------------- */
-/* Eco-section icons (About page addition)                     */
+/* Eco-section cards (About page addition)                     */
 /* ---------------------------------------------------------- */
 .eco-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
-  margin-top: 16px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 .eco-card {
-  background-color: #f3f8fd;
-  border-left: 4px solid var(--eshine-light-blue);
-  padding: 16px 18px;
-  border-radius: 6px;
+  background-color: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  border-left: 4px solid var(--blue);
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
 }
+.eco-card h3 { margin-top: 0; }
+.eco-card p { color: var(--text-dark); margin: 0; max-width: 100%; }
